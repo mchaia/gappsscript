@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <style> 
+            input[type=button] {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 8px 32px;
+                text-decoration: none;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+        </style>    
+    
+        <script>
+            function onSuccess() {
+                google.script.host.close();
+            }
+        
+            function writeToSheet(emp_lastname, emp_names, emp_document, emp_account, emp_amount) {
+                if (!emp_lastname || 0 === emp_lastname.length)
+                    return;
+                
+                var emp = {lastname: emp_lastname,  name: emp_names, document: emp_document, account: emp_account, amount: emp_amount};
+                google.script.run.withSuccessHandler(onSuccess).createEmployee(emp);
+            }
+        </script>
+    </head>
+    
+    <body>
+        <form>
+            <font size=2 face="arial,helvetica">Apellido:</font><br>
+            <input type="text" name="emp_lastname" size=35><br>
+            <hr>
+
+            <font size=2 face="arial,helvetica">Nombres:</font><br>
+            <input type="text" name="emp_names" size=35><br>
+            <hr>
+            
+            <font size=2 face="arial,helvetica">Tipo y Nro. Documento:</font><br>
+            <input type="text" name="emp_document" size=20><br>
+            <hr>
+
+            <font size=2 face="arial,helvetica">Nro. Cuenta:</font><br>
+            <input type="text" name="emp_account" size=15><br>
+            <hr>
+            
+            <font size=2 face="arial,helvetica">Importe:</font><br>
+            <input type="number" name="emp_amount" size=10><br>
+            <hr>
+            
+            <input type="button" value="Aceptar" onclick="writeToSheet(emp_lastname.value, emp_names.value, emp_document.value, emp_account.value, emp_amount.value)"/>
+        </form>
+    </body>
+</html>
+
+
