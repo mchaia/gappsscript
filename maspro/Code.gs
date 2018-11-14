@@ -103,7 +103,7 @@ function buildFileObject(data) {
     }
   
     var totalAmountNoDecimalPoint = totalAmount * 100.00;
-    var totalAmountStr = Utilities.formatString("%013d", totalAmountNoDecimalPoint.toFixed(0));
+    var totalAmountStr = Utilities.formatString("%015d", totalAmountNoDecimalPoint.toFixed(0));
   
     var batch = "000001"; // Assume less than 10,000 trxs forever :D
     var previousDebitDate = filler("0", 8);
