@@ -18,7 +18,7 @@ var COELSA_ASIPRO_COMPANY_DESC = "ASIPRO";
 var COELSA_FILE_NAME_PREFIX = "ASIE";
 
 var CBU_ASIPRO_BLOCK1 = "02900186"; // Banco Ciudad 029, branch 18, check digit 6
-var CBU_BLOCK_2_ACCNT_TYPE_AND_CURRENCY = "02"; // Savings account in pesos
+var CBU_BLOCK_2_ACCNT_TYPE_AND_CURRENCY = "10"; // Savings account in pesos
 
 var WORKING_FOLDER_NAME = "COELSA - Debitos";
 
